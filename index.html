@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <img id="GameOverImg" src="./img/game-over.jpg" class="game_over_img" style="transform: scaleX(0.0) scaley(0.0);">
+
+    <a href="index.html" id="restartButton" style="transform: scaleX(0.0) scaley(0.0);">RESTART</a>
+
+    <div class="player_container">
+        <div id="player_1">
+            <img src="./img/circle.svg">Player 1
+        </div>
+        <div class="player_inactive" id="player_2">
+            <img src="./img/cross.svg">Player 2
+        </div>
+    </div>
+
+    <div id="line_0" class="horizontal_line" style="top: 36%;"></div>
+    <div id="line_1" class="horizontal_line" style="top: 55.5%;"></div>
+    <div id="line_2" class="horizontal_line" style="top: 75%;"></div>
+    <div id="line_3" class="horizontal_line make_vertical" style="top: 56%;"></div>
+    <div id="line_4" class="horizontal_line make_vertical" style="top: 56%; right: 46.7%;"></div>
+    <div id="line_5" class="horizontal_line make_vertical" style="top: 56%; left: 46.7%;"></div>
+    <div id="line_6" class="horizontal_line" style="top: 56%; transform: rotate(45deg) scaleX(0.0);"></div>
+    <div id="line_7" class="horizontal_line" style="top: 56%; transform: rotate(-45deg) scaleX(0.0); right: 38%;"></div>
+
+    <table>
+        <tr>
+            <td onclick="fillShape(0); checkForWin()"><img id="circle_0" src="./img/circle.svg" class="circle absolute d-none"><img id="cross_0" src="./img/cross.svg" class="cross absolute d-none"></td>
+            <td onclick="fillShape(1); checkForWin()"><img id="circle_1" src="./img/circle.svg" class="circle absolute d-none"><img id="cross_1" src="./img/cross.svg" class="cross absolute d-none"></td>
+            <td onclick="fillShape(2); checkForWin()"><img id="circle_2" src="./img/circle.svg" class="circle absolute d-none"><img id="cross_2" src="./img/cross.svg" class="cross absolute d-none"></td>
+        </tr>
+        <tr>
+            <td onclick="fillShape(3); checkForWin()"><img id="circle_3" src="./img/circle.svg" class="circle absolute d-none"><img id="cross_3" src="./img/cross.svg" class="cross absolute d-none"></td>
+            <td onclick="fillShape(4); checkForWin()"><img id="circle_4" src="./img/circle.svg" class="circle absolute d-none"><img id="cross_4" src="./img/cross.svg" class="cross absolute d-none"></td>
+            <td onclick="fillShape(5); checkForWin()"><img id="circle_5" src="./img/circle.svg" class="circle absolute d-none"><img id="cross_5" src="./img/cross.svg" class="cross absolute d-none"></td>
+        </tr>
+        <tr>
+            <td onclick="fillShape(6); checkForWin()"><img id="circle_6" src="./img/circle.svg" class="circle absolute d-none"><img id="cross_6" src="./img/cross.svg" class="cross absolute d-none"></td>
+            <td onclick="fillShape(7); checkForWin()"><img id="circle_7" src="./img/circle.svg" class="circle absolute d-none"><img id="cross_7" src="./img/cross.svg" class="cross absolute d-none"></td>
+            <td onclick="fillShape(8); checkForWin()"><img id="circle_8" src="./img/circle.svg" class="circle absolute d-none"><img id="cross_8" src="./img/cross.svg" class="cross absolute d-none"></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
