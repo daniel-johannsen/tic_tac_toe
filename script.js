@@ -1,6 +1,7 @@
 let fields = [];
 let gameOver = false;
 let currentShape = 'cross';
+let filledFields = 0;
 
 let AUDIO_SUCCESS = new Audio('./audio/win1.mp3');
 let AUDIO_END = new Audio('./audio/game_over.mp3');
@@ -11,10 +12,14 @@ function fillShape(id) {
             currentShape = 'circle';
             document.getElementById('player_2').classList.remove('player_inactive');
             document.getElementById('player_1').classList.add('player_inactive');
+            filledFields++;
+            console.log(filledFields);
         } else {
             currentShape = 'cross';
             document.getElementById('player_1').classList.remove('player_inactive');
             document.getElementById('player_2').classList.add('player_inactive');
+            filledFields++;
+            console.log(filledFields);
         }
 
         fields[id] = currentShape;
@@ -72,7 +77,7 @@ function checkForWin() {
         document.getElementById('line_7').style.transform = 'rotate(-45deg) scaleX(1.3)';
     }
 
-    if (winner || fields.length > 8) { //wenn winner == true , führe folgendes aus
+    if (winner || filledFields >= 9) { //wenn winner == true , führe folgendes aus
         win();
     }
 
