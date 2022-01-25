@@ -72,15 +72,19 @@ function checkForWin() {
         document.getElementById('line_7').style.transform = 'rotate(-45deg) scaleX(1.3)';
     }
 
-    if (winner) { //wenn winner == true , führe folgendes aus
-        console.log('WINNER:', winner)
-        gameOver = true;
-        setTimeout(function() {
-            document.getElementById('GameOverImg').style.transform = 'scaleX(1) scaleY(1)';
-            AUDIO_END.play();
-        }, 1000);
-        setTimeout(function() {
-            document.getElementById('restartButton').style.transform = 'scaleX(1) scaleY(1)';
-        }, 2000);
+    if (winner || fields.length > 8) { //wenn winner == true , führe folgendes aus
+        win();
     }
+
+}
+
+function win() {
+    gameOver = true;
+    setTimeout(function() {
+        document.getElementById('GameOverImg').style.transform = 'scaleX(1) scaleY(1)';
+        AUDIO_END.play();
+    }, 1000);
+    setTimeout(function() {
+        document.getElementById('restartButton').style.transform = 'scaleX(1) scaleY(1)';
+    }, 2000);
 }
